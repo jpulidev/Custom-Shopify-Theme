@@ -1,0 +1,10 @@
+.pxFormGenerator {
+  padding: 2.5em 0;
+  @include media-query($small-up) {
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+  @include media-query($large-up) {
+    padding: 4.5em 6em;
+  }
+}

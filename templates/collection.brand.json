@@ -1,0 +1,145 @@
+{
+  "sections": {
+    "16394872937df4d795": {
+      "type": "slideshow-custom",
+      "blocks": {
+        "1639487293dcef855b-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Hero.png",
+            "mobile_image": "shopify:\/\/shop_images\/Hero_9ae15db8-4883-4436-8aa9-4ed1c05c2a40.png",
+            "show_overlay": false,
+            "overlay_opacity": 30,
+            "text_color": "#ffffff",
+            "content_position": "middle_center",
+            "button_background": "#ffffff",
+            "button_text_color": "#000000",
+            "button_text": "Button",
+            "link": ""
+          }
+        },
+        "1639487293dcef855b-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Hero_23d8ec06-f157-49bc-a490-35a45dda2890.png",
+            "show_overlay": false,
+            "overlay_opacity": 30,
+            "text_color": "#ffffff",
+            "content_position": "middle_center",
+            "button_background": "#ffffff",
+            "button_text_color": "#000000",
+            "button_text": "Button",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "1639487293dcef855b-0",
+        "1639487293dcef855b-1"
+      ],
+      "settings": {
+        "edge_to_edge": true,
+        "section_size": "medium",
+        "carousel_effect": "slide",
+        "autoplay": true,
+        "cycle_speed": 5
+      }
+    },
+    "1639487250afb1af21": {
+      "type": "collection-list-brand",
+      "blocks": {
+        "16394872507f485685-0": {
+          "type": "collection",
+          "settings": {
+            "collection": "used-equipment",
+            "image": "shopify:\/\/shop_images\/Cat-buttons-CPS-shadowMesa-de-trabajo-1-copia-4_6cfb3977-eded-4d96-9dd2-d19f2a0aed02.png",
+            "link": ""
+          }
+        },
+        "16394872507f485685-1": {
+          "type": "collection",
+          "settings": {
+            "collection": "rental-equipment",
+            "image": "shopify:\/\/shop_images\/Cat-buttons-CPS-shadowMesa-de-trabajo-1-copia-5_13ab2eab-31a6-4e92-9027-b59fd6f6ea96.png",
+            "link": ""
+          }
+        },
+        "16394872507f485685-2": {
+          "type": "collection",
+          "settings": {
+            "collection": "high-rise-equipment",
+            "image": "shopify:\/\/shop_images\/Cat-buttons-CPS-shadowMesa-de-trabajo-1-copia-3.png",
+            "link": ""
+          }
+        },
+        "16394872507f485685-3": {
+          "type": "collection",
+          "settings": {
+            "collection": "placing-equipment",
+            "image": "shopify:\/\/shop_images\/Cat-buttons-CPS-shadowMesa-de-trabajo-1_ea4446f5-e93e-46d5-95e3-c132c922dc1f.png",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "16394872507f485685-0",
+        "16394872507f485685-1",
+        "16394872507f485685-2",
+        "16394872507f485685-3"
+      ],
+      "settings": {
+        "round_images": false,
+        "show_collection_title": true,
+        "image": "shopify:\/\/shop_images\/Rectangle_33_dd1aa197-476a-432f-b237-584193ac04e8.png"
+      }
+    },
+    "163707868476c679f8": {
+      "type": "collection-with-image",
+      "settings": {
+        "color_section": "#f3f4f5",
+        "collection": "placing-equipment",
+        "products_count": 12,
+        "show_quick_buy": false,
+        "background": "#112435",
+        "text_color": "#ffffff",
+        "title": "Placing Equipment",
+        "content": "Looking for something in Carbide? \nConcrete Pump Supply has the parts you need!",
+        "button_background": "#f26531",
+        "button_text_color": "#ffffff",
+        "button_text": "Learn more",
+        "button_link": "shopify:\/\/collections\/placing-equipment"
+      }
+    },
+    "16370787055451db5f": {
+      "type": "featured-collection",
+      "settings": {
+        "collection": "used-equipment",
+        "title": "Used Equipment",
+        "alignment_title": "center",
+        "products_count": 4,
+        "show_quick_buy": false,
+        "link_title": "View all",
+        "link_url": "shopify:\/\/collections\/used-equipment"
+      }
+    },
+    "1637078841e67daa5f": {
+      "type": "featured-collection",
+      "settings": {
+        "collection": "rental-equipment",
+        "title": "Rental Equipment",
+        "alignment_title": "center",
+        "products_count": 4,
+        "show_quick_buy": false,
+        "link_title": "View all",
+        "link_url": "shopify:\/\/collections\/rental-equipment"
+      }
+    }
+  },
+  "order": [
+    "16394872937df4d795",
+    "1639487250afb1af21",
+    "163707868476c679f8",
+    "16370787055451db5f",
+    "1637078841e67daa5f"
+  ]
+}

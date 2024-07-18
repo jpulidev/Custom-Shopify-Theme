@@ -1,0 +1,114 @@
+#shopify-section-newsletter {
+  .section {
+    padding: 2.375em 0;
+    @include media-query($medium-down) {
+      padding-top: 1em;
+    }
+  }
+  .container {
+    display: flex;
+    flex-flow: column wrap;
+    @include media-query($medium-up) {
+      align-items: center;
+      flex-flow: row nowrap;
+    }
+    .heading,
+    .newsletter { margin-right: 1em; }
+    .heading,
+    .social-media { flex-shrink: 1; }
+  }
+
+  .heading {
+    font-size: 1.25em;
+    margin: 0;
+    @include media-query($medium-up) {
+      text-align: left;
+    }
+    @include media-query($large-up) {
+      font-size: 2.125em;
+    }
+  }
+
+  .social-media {
+    @include media-query($medium-down) {
+      margin-bottom: .75em;
+      order: -1;
+    }
+    &__item-list {
+      justify-content: center;
+      @include media-query($medium-up) {
+        justify-content: flex-end;
+      }
+    }
+    &__item {
+      margin: .5em .625em;
+      svg {
+        opacity: 1;
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+.newsletter {
+  flex-grow: 1;
+  margin-top: 0;
+  @include media-query($medium-down) {
+    padding: .75em 0 0;
+  }
+  &__form,
+  #mc-embedded-subscribe-form {
+    width: 100%;
+    @include media-query($medium-down) {
+      margin: auto;
+      max-width: 24em;
+    }
+    @include media-query($medium-up) {
+      width: 75%;
+    }
+    .form__input-row,
+    #mc_embed_signup_scroll {
+      display: flex;
+      margin: 0;
+      position: relative;
+      &:after {
+        content: url('./icon-arrow-right.svg');
+        display: block;
+        position: absolute;
+        right: 1.125em;
+        top: 25%;
+      }
+      input[type='email'] {
+        background: $white;
+        border: 0;
+        border-radius: 4px;
+        box-shadow: none;
+        color: rgba(17, 36, 53, .6);
+        font-size: .75em;
+        height: auto;
+        line-height: 2;
+        padding: 1.25em 2em .75em;
+        position: relative;
+        width: 100%;
+      }
+      label { font-size: .75em; }
+      input[type='submit'],
+      button[type='submit'] {
+        background: none;
+        cursor: pointer;
+        height: 100%;
+        margin: 0;
+        opacity: 0;
+        padding: 0;
+        position: absolute;
+        right: 0;
+        z-index: 1;
+      }
+    }
+    .form__input-wrapper { margin: 0; }
+    .form__floating-label {
+      color: rgba(17, 36, 53, .6);
+      left: 2em;
+    }
+  }
+}

@@ -1,0 +1,105 @@
+<style>
+  #shopify-section-{{ section.id }},
+  #shopify-section-{{ section.id }} .heading {
+    color: {{ section.settings.color }};
+  }
+
+  #shopify-section-{{ section.id }} .header-collection-hero {
+    height: {{ section.settings.image_height | times: 0.75 | append: 'px' }};
+  }
+
+  @media screen and (min-width: 768px) {
+    #shopify-section-{{ section.id }} .header-collection-hero {
+      height: {{ section.settings.image_height | append: 'px' }};
+    }
+  }
+</style>
+
+{% if section.settings.use_custom_title %}
+  {% assign hero_title = section.settings.custom_title %}
+{% else %}
+  {% if collection %}
+    {% assign hero_title = collection.title %}
+  {% else %}
+    {% assign hero_title = page.title %}
+  {% endif %}
+{% endif %}
+
+<header class="header-collection-hero page__header page__header--stack page__header--centered page__header--image {% if section.settings.show_image_overlay %}page__header--overlay{% endif %} {% if section.settings.image_edge_to_edge %}page__header--edge2edge{% endif %}">
+  {%- capture supported_sizes -%}{%- render 'image-size', sizes: '300,400,500,600,700,800,900,1000,1100,1200,1300,1400,1500,1600,1700,1800,1900,2000', image: section.settings.image -%}{%- endcapture -%}
+  {% if section.settings.image != nil %}
+    {%- assign image_url = section.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+  {% else %}
+    {% if collection.image %}
+      {%- assign image_url = collection.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+    {% endif %}
+  {% endif %}
+  {% if image_url %}
+    <img data-src="{{ image_url }}" data-widths="[{{ supported_sizes }}]" data-sizes="auto" alt="{{ hero_title }}" class="lazyload image--fade-in page__header-image"> 
+  {% else %}
+    {{ 'lifestyle-1' | placeholder_svg_tag: 'page__header-image page__header-image--placeholder' }}
+  {% endif %}
+  <div class="page__header-content container">
+    <h1 class="collection-heading">{{ hero_title }}</h1>
+  </div>
+</header>
+  
+  {% schema %}
+  {
+    "name": "Hero Collection LP",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Image will be dynamically resized to fit into the box. To prevent image cut, please use Slideshow section instead."
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image",
+        "info": "If no image is selected, theme will look for an alternative."
+      },
+      {
+        "type": "checkbox",
+        "id": "show_image_overlay",
+        "label": "Show image overlay",
+        "info": "Increase text readability on busy images.",
+        "default": false
+      },
+      {
+        "type": "range",
+        "id": "image_height",
+        "min": 250,
+        "max": 350,
+        "step": 5,
+        "unit": "px",
+        "label": "Image Height",
+        "default": 250
+      },
+      {
+        "type": "checkbox",
+        "id": "use_custom_title",
+        "label": "Use custom title",
+        "info": "Substitutes page/collection title for custom text below.",
+        "default": false
+      },
+      {
+        "type": "text",
+        "id": "custom_title",
+        "label": "Custom Title"
+      },
+      {
+        "type": "color",
+        "id": "color",
+        "label": "Text color",
+        "default": "#ffffff"
+      }
+    ],
+    "presets": [
+      {
+        "category": "Image",
+        "name": "Hero Collection",
+        "settings": {}
+      }
+    ]
+  }
+  {% endschema %}

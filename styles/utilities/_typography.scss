@@ -1,0 +1,44 @@
+body {
+  font-size: 16px;
+}
+
+p,
+span {
+  font-family: $font--body;
+  font-size: 1em;
+  font-weight: 500;
+}
+h1,
+.h1 {
+  font-family: $font--heading;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 4.375rem;
+  line-height: normal;
+  @include media-query($medium-down) {
+    font-size: 2.94rem;
+    line-height: normal;
+  }
+}
+h2,
+.h2 {
+  font-family: $font--heading;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 2.5rem;
+  color: $navy;
+  text-transform: capitalize;
+  @include media-query($medium-down) {
+    font-size: 1.5rem;
+    line-height: normal;
+  }
+}
+h3,
+.h3 {
+  font-family: $font--heading;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.75rem;
+  line-height: normal;
+  color: $navy;
+}

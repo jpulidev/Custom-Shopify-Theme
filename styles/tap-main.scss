@@ -1,0 +1,50 @@
+@charset 'UTF-8';
+
+/**
+* Main SCSS -- Concrete Pump Supply -- The Taproom
+*
+* eg: @import "./core/variables";
+*/
+@import "../node_modules/swiper/swiper-bundle";
+@import "./utilities/variables";
+@import "./utilities/mixins";
+@import "./utilities/typography";
+
+.container {
+  padding-left: 1em;
+  padding-right: 1em;
+  @include media-query($medium-up) {
+    padding-left: 4em;
+    padding-right: 4em;
+  }
+  @include media-query($large-up) {
+    padding-left: 8.75em;
+    padding-right: 8.75em;
+  }
+}
+
+/* Templates */
+@import "./templates/quote-request";
+
+/* Sections */
+@import "./sections/announcement-bar";
+@import "./sections/header";
+@import "./sections/footer";
+@import "./sections/newsletter";
+@import "./sections/slideshow";
+@import "./sections/image-with-text";
+@import "./sections/video";
+@import "./sections/main-collections-list";
+@import "./sections/collection";
+@import "./sections/collection-list";
+@import "./sections/collection-tile-links";
+@import "./sections/featured-collection";
+@import "./sections/featured-product";
+@import "./sections/product";
+@import "./sections/product-recommendations";
+@import "./sections/reviews";
+@import "./sections/cart";
+
+/* Snippets */
+@import "./snippets/mega-menu";
+@import "./snippets/mini-cart";

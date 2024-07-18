@@ -1,0 +1,159 @@
+{% assign stars = "1, 2, 3, 4, 5" | split: ', ' %}
+
+<section class="section reviews" data-section-id="{{ section.id }}" data-section-type="reviews" style="background-color: {{ section.settings.background }}">
+  <div class="container">
+    {% if section.settings.title != blank %}
+      <h2 class="reviews-title">{{ section.settings.title }}</h2>
+    {% endif %}
+    <div class="swiper" id="{{ section.id | split: '__' | last | prepend: 'reviews_' }}">
+      <div class="reviews-container swiper-wrapper">
+        {% for block in section.blocks %}
+          <div class="review swiper-slide">
+            <div class="review__content">
+              {% liquid
+                assign ratingCeiling = block.settings.rating | ceil
+                assign rating = block.settings.rating | append: ''
+
+                if rating contains '.'
+                  assign ratingFraction = block.settings.rating | split: '.' | last | times: 10
+                else
+                  assign ratingFraction = false
+                endif
+              %}
+              <div class="stars">
+                {% for x in stars %}
+                  {% assign xNum = x | times: 1 %}
+                  {% unless xNum > ratingCeiling %}
+                    <span class="star">
+                      <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        {% if xNum == ratingCeiling and ratingFraction %}
+                          <defs>
+                            <linearGradient id="star_fill_{{ block.id }}">
+                              <stop offset="{{ ratingFraction }}%" stop-color="#112435" stop-opacity="1" />
+                              <stop offset="{{ ratingFraction | append: '.01' }}%" stop-color="white" stop-opacity="1" />
+                            </linearGradient>
+                          </defs>
+                        {% endif %}
+                        <path d="M8.51384 0.829248C8.8187 -0.0804029 10.1053 -0.0804009 10.4102 0.82925L11.8964 5.26407C12.033 5.67162 12.4148 5.9463 12.8446 5.9463H17.5868C18.563 5.9463 18.9607 7.20167 18.1627 7.76384L14.3799 10.4284C14.0186 10.683 13.8672 11.1446 14.0076 11.5637L15.465 15.9123C15.7719 16.8282 14.7306 17.6039 13.9409 17.0476L10.0379 14.2983C9.69251 14.055 9.23151 14.055 8.88614 14.2983L4.98309 17.0476C4.19339 17.6039 3.1521 16.8282 3.45904 15.9123L4.91639 11.5637C5.05685 11.1446 4.90547 10.683 4.5441 10.4284L0.761374 7.76384C-0.0367055 7.20167 0.361048 5.9463 1.33725 5.9463H6.07943C6.50926 5.9463 6.89101 5.67162 7.0276 5.26407L8.51384 0.829248Z"
+                              fill="{% if xNum == ratingCeiling and ratingFraction %}url(#star_fill_{{ block.id }}){% else %}#112435{% endif %}"/>
+                      </svg>
+                    </span>
+                  {% endunless %}
+                {% endfor %}
+              </div>
+              <h4>{{ block.settings.title }}</h4>
+              {{ block.settings.content }}
+            </div>
+            {% if block.settings.name != blank %}
+              <div class="review__info">
+                {% if block.settings.reviewer_image %}
+                  <div class="image-crop">
+                    {{ block.settings.reviewer_image | img_tag }}
+                  </div>
+                {% endif %}
+                <h6>{{ block.settings.name }}</h6>
+                {% if block.settings.reviewer_title != blank %}<span>{{ block.settings.reviewer_title }}</span>{% endif %}
+              </div>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+      {% comment %} <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-scrollbar"></div> {% endcomment %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Reviews",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background",
+      "default": "#f26531"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Reviews"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "New Review [NEEDS CONTENT]"
+        },
+        {
+          "type": "range",
+          "id": "rating",
+          "min": 1,
+          "max": 5,
+          "step": 0.2,
+          "label": "Star(s)",
+          "default": 5
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Reviewer Name"
+        },
+        {
+          "type": "text",
+          "id": "reviewer_title",
+          "label": "Reviewer Title"
+        },
+        {
+          "type": "image_picker",
+          "id": "reviewer_image",
+          "label": "Reviewer Image"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Text",
+          "default": "<p>Here is where your review text will go. Please copy and paste from the appropriate source and fix any formatting issues within the rich text editor.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Reviews",
+      "blocks": [
+        {
+          "type": "review",
+          "settings": {
+            "name": "Ted Lasso",
+            "reviewer_title": "Football Coach"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "name": "Ted Lasso",
+            "reviewer_title": "Football Coach"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "name": "Ted Lasso",
+            "reviewer_title": "Football Coach"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

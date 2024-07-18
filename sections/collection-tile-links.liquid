@@ -1,0 +1,162 @@
+{% capture collection_list %}
+    {%- for collection in product.collections -%}
+        {{ collection.id }}
+        {%- unless forloop.last %},{% endunless -%}
+    {%- endfor -%}
+{% endcapture %}
+
+<section class="section" data-section-id="{{ section.id }}" data-section-type="collection-tile-links">
+    {%- if section.settings.section_headline != blank -%}
+    {% assign split_color_headline = section.settings.section_headline | replace: "{", "<span>" | replace: "}", "</span>" %}
+    <div class="container">
+      <div class="collection-tile-links__headline">
+        <h2 class="heading h2">{{ split_color_headline }}</h2>
+      </div>
+    </div>
+    {% endif %}
+    <div class="container collection-tile-links__multi {% if section.settings.collapse_desktop %}collection-tile-links__collapsed{% endif %}">
+        {%- for block in section.blocks -%}
+            {% if collection_list contains block.settings.collection.id %}
+                {% continue %}
+            {% endif %}
+            {%- capture text -%}
+                <div class="collection-tile-links__text-container">
+                    <div class="collection-tile-links__text-aligner">
+                        <h2 class="heading h2">
+                            {%- if block.settings.title != blank -%}
+                                {{ block.settings.title | escape }}
+                            {% else %}
+                                {{ block.settings.collection.title }}
+                            {%- endif -%}
+                        </h2>
+                    </div>
+                </div>
+            {%- endcapture -%}
+
+            <a href="{{ block.settings.collection.url }}" class="collection-tile-links__wrapper">
+                <div class="collection-tile-links" id="collection-tile-links__{{ forloop.index }}">
+                    {%- capture supported_sizes -%}{%- render 'image-size', sizes: '300,400,500,600,700,800,900,1000,1100,1200,1300,1400,1500,1600,1700,1800,1900,2000', image: block.settings.image -%}{%- endcapture -%}
+                    {% if block.settings.image %}
+                        {% assign image_url = block.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+                    {% else %}
+                        {% assign image_url = block.settings.collection.featured_image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+                    {% endif %}
+        
+                    <img data-src="{{ image_url }}" data-widths="[{{ supported_sizes }}]" data-sizes="auto" alt="{{ block.settings.image.alt | escape }}" class="lazyload image--fade-in page__header-image">
+                    {{ text }}
+                </div>
+            </a>
+        {%- endfor -%}
+    </div>
+  </section>
+  <style>
+    {%- if section.settings.background_image -%}
+      [data-section-id="{{ section.id }}"][data-section-type="collection-tile-links"]{
+          background: url({{ section.settings.background_image | img_url: 'master' }});
+          background-size: cover;
+          background-position: center;
+          padding-top:40px;
+          padding-bottom: 40px;
+      }
+    {%- endif -%}
+    {%- for block in section.blocks -%}
+        {%- if block.settings.background_color != blank -%}
+            [data-section-id="{{ section.id }}"] #collection-tile-links__{{ forloop.index }} {
+                background-color: {{ block.settings.background_color }};
+            }
+        {%- endif -%}
+        {%- if block.settings.color != blank -%}
+            [data-section-id="{{ section.id }}"] #collection-tile-links__{{ forloop.index }} .collection-tile-links__text-aligner, [data-section-id="{{ section.id }}"] #collection-tile-links__{{ forloop.index }} .collection-tile-links__text-aligner .heading{
+                color: {{ block.settings.color }};
+            }
+        {% endif %}
+        {%- if block.settings.image_position == 'left' or block.settings.image_position == 'right' -%}
+          {% unless section.settings.collapse_desktop %}
+            @media only screen and (max-width: 1023px) {
+          {% endunless %}
+              [data-section-id="{{ section.id }}"] #collection-tile-links__{{ forloop.index }}{
+                  background: linear-gradient({{ block.settings.background_color }}75, {{ block.settings.background_color }}75), url({{ block.settings.image | img_url: 'master' }});
+                  background-size: cover;
+                  background-position: center;
+              }
+          {% unless section.settings.collapse_desktop %}
+            }
+          {% endunless %}
+        {%- endif -%}
+    {%- endfor -%}
+  </style>
+  
+  {% schema %}
+  {
+    "name": "Collection Tile Links",
+    "settings": [
+        {
+            "type": "text",
+            "id": "section_headline",
+            "label": "Section headline",
+            "info": "Optional. Use { } to surround text that should be orange."
+        },
+        {
+            "type": "image_picker",
+            "id": "background_image",
+            "label": "Image"
+        },
+        {
+          "type": "checkbox",
+          "id": "collapse_desktop",
+          "label": "Collapse blocks on desktop",
+          "info": "Will mimic the mobile design on desktop, instead of stacking and expanding block content.",
+          "default": false
+        }        
+    ],
+    "blocks": [
+        {
+            "name": "Collection Tiles",
+            "type": "collection_tile",
+            "settings": [
+              {
+                "type": "collection",
+                "id": "collection",
+                "label": "Collection"
+              },
+              {
+                "type": "text",
+                "id": "title",
+                "label": "Custom Title"
+              },
+              {
+                "type": "image_picker",
+                "id": "image",
+                "label": "Image",
+                "info": "Tile background image. Default is the collection featured image."
+              },
+              {
+                "type": "color_background",
+                "id": "background_color",
+                "label": "Background Color",
+                "default": "#112435",
+                "info": "Background color overlay."
+              },
+              {
+                "type": "color",
+                "id": "color",
+                "label": "Text",
+                "default": "#ffffff"
+              }
+            ]
+        }
+    ],
+    "presets": [
+      {
+        "category": "Collection",
+        "name": "Collection Tile Links",
+        "settings": {},
+        "blocks": [
+            {
+                "type": "collection_tile"
+            }
+        ]
+      }
+    ]
+  }
+  {% endschema %}

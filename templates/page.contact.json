@@ -1,0 +1,34 @@
+{
+  "sections": {
+    "163950000440a69b03": {
+      "type": "hero-collection",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Hero_9ae15db8-4883-4436-8aa9-4ed1c05c2a40.png",
+        "show_image_overlay": false,
+        "image_height": 345,
+        "use_custom_title": false,
+        "custom_title": "",
+        "color": "#ffffff"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+      }
+    },
+    "contact-form": {
+      "type": "contact-form",
+      "settings": {
+        "form_heading": "",
+        "show_store_info": false,
+        "store_heading": "Find us",
+        "store_info": ""
+      }
+    }
+  },
+  "order": [
+    "163950000440a69b03",
+    "main",
+    "contact-form"
+  ]
+}

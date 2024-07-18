@@ -1,0 +1,38 @@
+@mixin button($color: $orange) {
+  background-color: $color;
+  color: $white;
+  line-height: 1.5em;
+  padding: 11px 1em;
+}
+
+.button {
+  &--primary {
+    @include button;
+  }
+  &--secondary {
+    @include button($color: $light-blue);
+  }
+}
+
+/**
+ * Sets a media query for the specified breakpoint
+ *
+ * Accepts:
+ * - $media-query: {String} Breakpoint variable (list found in variables.scss)
+ */
+@mixin media-query($media-query) {
+  $breakpoint-found: false;
+
+  @each $breakpoint in $breakpoints {
+    $name: nth($breakpoint, 1);
+    $declaration: nth($breakpoint, 2);
+
+    @if $media-query == $name and $declaration {
+      $breakpoint-found: true;
+
+      @media only screen and #{$declaration} {
+        @content;
+      }
+    }
+  }
+}

@@ -1,0 +1,65 @@
+/** 
+  Colors
+*/
+$navy: #112435;
+$light-blue: #0096d6;
+$orange: #f26531;
+$light-gray: #f3f4f5;
+$white: #fff;
+$text-gray: #18191F;
+$black: #000;
+
+
+/** 
+  Typography
+*/
+$roboto: "Roboto", sans-serif;
+$roboto-condensed: var(--heading-font-family);
+$helvetica: "Helvetica", sans-serif;
+
+$font--heading: $roboto-condensed;
+$font--body: $helvetica;
+
+
+/**
+  Grid & Breakpoints
+*/
+$grid-mobile: 590px;
+$grid-tablet: 768px;
+$grid-laptop: 1024px;
+$grid-desktop_s: 1280px;
+$grid-desktop_l: 1440px;
+$grid-max-width: 1160px;
+$grid-gutter: 30px;
+
+$mobile: "mobile";
+$mobile-up: "mobile-up";
+$small: "small";
+$small-up: "small-up";
+$small-down: "small-down";
+$medium: "medium";
+$medium-down: "medium-down";
+$medium-up: "medium-up";
+$large: "large";
+$large-down: "large-down";
+$large-up: "large-up";
+$xl: "xl";
+$xl-down: "xl-down";
+$xl-up: "xl-up";
+
+$breakpoints: (
+  $mobile "(max-width: #{$grid-mobile - 1})",
+  $mobile-up "(min-width: #{$grid-mobile})",
+  $small "(min-width: #{$grid-mobile}) and (max-width: #{$grid-tablet})",
+  $small-down "(max-width: #{$grid-tablet - 1})",
+  $small-up "(min-width: #{$grid-tablet})",
+  $medium "(min-width: #{$grid-tablet}) and (max-width: #{$grid-laptop - 1})",
+  $medium-down "(max-width: #{$grid-laptop - 1})",
+  $medium-up "(min-width: #{$grid-laptop})",
+  $large "(min-width: #{$grid-laptop}) and (max-width: #{$grid-desktop_s - 1})",
+  $large-down "(max-width: #{$grid-desktop_s - 1})",
+  $large-up "(min-width: #{$grid-desktop_s})",
+  $xl "(min-width: #{$grid-desktop_s}) and (max-width: #{$grid-desktop_l - 1})",
+  $xl-down "(max-width: #{$grid-desktop_l - 1})",
+  $xl-up "(min-width: #{$grid-desktop_l})"
+);

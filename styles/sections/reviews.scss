@@ -1,0 +1,200 @@
+.section.reviews {
+  padding: 2em 0;
+  @include media-query($medium-up) {
+    padding-bottom: 4em;
+  }
+
+  .reviews-title {
+    color: $white;
+    font-size: 1.5em;
+    margin-bottom: .5em;
+    @include media-query($large-up) {
+      font-size: 3.5em;
+    }
+  }
+
+  .reviews-container {
+    align-items: stretch;
+  }
+
+  .review {
+    display: flex;
+    flex-flow: column wrap;
+    height: unset;
+    text-align: center;
+    &__content {
+      background-color: $white;
+      border-radius: .625em;
+      box-shadow: 0 30px 40px 0 rgba(212, 217, 232, 0.2);
+      color: $text-gray;
+      flex-grow: 1;
+      padding: 1em 2.5em 2.75em;
+      h4 {
+        font-family: $font--heading;
+        font-size: 1em;
+        font-weight: 700;
+        margin-bottom: 0;
+        @include media-query($large-up) {
+          font-size: 1.5em;
+        }
+      }
+      p {
+        font-size: .625em;
+        @include media-query($small-up) {
+          font-size: .75em;
+        }
+        @include media-query($large-up) {
+          font-size: .875em;
+        }
+      }
+    }
+    &__info {
+      color: $white;
+      .image-crop {
+        border-radius: 100%;
+        display: inline-block;
+        height: 3.5em;
+        margin-top: -1.75em;
+        overflow: hidden;
+        position: relative;
+        width: 3.5em;
+        img {
+          height: 100%;
+          left: 50%;
+          max-width: unset;
+          position: absolute;
+          transform: translateX(-50%);
+          width: auto;
+        }
+      }
+      h6 {
+        font-family: $font--heading;
+        font-size: .875em;
+        font-weight: 700;
+        line-height: 1.5;
+        margin-bottom: 0;
+        @include media-query($large-up) {
+          font-size: 1.125em;
+        }
+      }
+      span {
+        font-size: .875em;
+        line-height: 1.5;
+        @include media-query($large-up) {
+          font-size: .875em;
+        }
+      }
+    }
+  }
+}
+
+.junip-review-section {
+  &[data-layout='grid'][data-reviews-type='store_reviews'] {
+    background-color: $orange;
+
+    .junip-review-sort-container,
+    .junip-separator,
+    .junip-filters,
+    .junip-powered-by-footer,
+    .junip-grid-action-container,
+    .junip-recommendation-container {
+      display: none;
+    }
+
+    .junip-product-review-container {
+      max-width: unset;
+      padding: 2em 1em;
+      @include media-query($medium-up) {
+        padding: 2em 4em 2em;
+      }
+      @include media-query($large-up) {
+        padding-left: 8.75em;
+        padding-right: 8.75em;
+      }
+      &:before {
+        content: 'Reviews';
+        color: $white;
+        display: block;
+        font-size: 1.5em;
+        font-weight: 700;
+        margin-bottom: .5em;
+        @include media-query($large-up) {
+          font-size: 3.5em;
+        }
+      }
+    }
+
+    .junip-reviews-layout-grid {
+      grid-column-gap: 1em;
+      grid-row-gap: 1em;
+      padding: 0;
+      @include media-query($large-up) {
+        grid-column-gap: 2.5em;
+      }
+    }
+
+    .junip-review-grid-item-container {
+      background-color: $white;
+      border-radius: 10px;
+      box-shadow: 0 30px 40px 0 rgba(212, 217, 232, 0.2);
+      color: $text-gray;
+      position: relative;
+    }
+
+    .junip-grid-topbar {
+      border-bottom: 0;
+      flex-flow: column-reverse wrap;
+      margin: 0;
+      padding: 16px;
+    }
+
+    .junip-grid-customer-container {
+      flex-flow: column wrap;
+      margin: 0;
+      text-align: center;
+    }
+
+    .junip-avatar {
+      height: 56px;
+      margin: .5em;
+      min-width: 56px;
+      width: 56px;
+    }
+
+    .junip-grid-customer-text-container {
+      display: flex;
+      flex-flow: column-reverse wrap;
+    }
+
+    .junip-grid-item-title {
+      font-family: $font--heading;
+      font-size: 1em;
+      font-weight: 700;
+      margin-bottom: 0;
+      @include media-query($large-up) {
+        font-size: 1.5em;
+      }
+    }
+
+    .junip-review-author {
+      line-height: 1;
+    }
+
+    .junip-grid-item-content {
+      font-size: .625em;
+      padding: 0 40px 16px;
+      @include media-query($small-up) {
+        font-size: .75em;
+      }
+      @include media-query($large-up) {
+        font-size: .875em;
+      }
+    }
+  }
+}
+
+.junip-product-review {
+  &-title {
+    display: none;
+  }
+}

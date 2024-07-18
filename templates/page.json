@@ -1,0 +1,27 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+      }
+    },
+    "163709964625cb9481": {
+      "type": "video",
+      "settings": {
+        "title": ""
+      }
+    },
+    "16370996480aa385ea": {
+      "type": "custom-html",
+      "settings": {
+        "title": "",
+        "html": "MailChimp form script will be inserted here."
+      }
+    }
+  },
+  "order": [
+    "main",
+    "163709964625cb9481",
+    "16370996480aa385ea"
+  ]
+}

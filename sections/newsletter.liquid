@@ -1,0 +1,115 @@
+<style>
+  #shopify-section-{{ section.id }} {
+    background: {{ section.settings.background }};
+    color: {{ section.settings.text }};
+  }
+</style>
+
+<section class="section {% if section.settings.background != settings.background %}section--isolated section--tight{% endif %} section--text-centered" data-section-id="{{ section.id }}" data-section-type="newsletter">
+  <div class="container">
+    {%- if section.settings.title != blank -%}
+      <h2 class="heading">{{ section.settings.title | escape }}</h2>
+    {%- endif -%}
+
+    {%- if section.settings.content != blank -%}
+      <div class="rte">
+        {{ section.settings.content }}
+      </div>
+    {%- endif -%}
+
+    {%- assign newsletter_id = 'newsletter-' | append: section.id -%}
+
+    <div class="newsletter newsletter--compact">
+      {%- if section.settings.external_form != blank -%}
+        {{ section.settings.external_form }}
+      {%- else -%}
+        {%- form 'customer', id: newsletter_id, class: 'form newsletter__form' -%}
+          {%- if form.posted_successfully? -%}
+            <p class="alert alert--success">{{ 'home_page.newsletter.success' | t }}</p>
+          {%- else -%}
+            {%- if form.errors -%}
+              <p class="alert alert--error">{{ form.errors.messages['email'] }}</p>
+            {%- endif -%}
+
+            <input type="hidden" name="contact[tags]" value="newsletter">
+
+            <div class="form__input-row">
+              <div class="form__input-wrapper form__input-wrapper--labelled">
+                <input type="email" id="newsletter[{{ section.id }}][contact][email]" name="contact[email]" class="form__field {% if section.settings.background != settings.background %}form__field--borderless{% endif %} form__field--text" required>
+                <label for="newsletter[{{ section.id }}][contact][email]" class="form__floating-label">{{ 'home_page.newsletter.input' | t }}</label>
+              </div>
+
+              <button type="submit" class="form__submit button button--primary">{{ 'home_page.newsletter.submit' | t }}</button>
+            </div>
+          {%- endif -%}
+        {%- endform -%}
+      {%- endif -%}
+    </div>
+    
+    {%- if section.settings.show_social_media -%}
+      {%- capture social_media -%}{% render 'social-media', show_social_media_name: false %}{%- endcapture -%}
+
+      {%- if social_media != blank -%}
+        <div class="social-media">
+          {{ social_media }}
+        </div>
+      {%- endif -%}
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Newsletter",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Customers who subscribe will have their email address added to the \"accepts marketing\" [customer list](/admin/customers?query=&accepts_marketing=1)."
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Newsletter"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Text",
+      "default": "<p>A short sentence describing what someone will receive by subscribing</p>"
+    },
+    {
+      "type": "html",
+      "id": "external_form",
+      "label": "External signup form code",
+      "info": "For instructions on how to properly retrieve the signup form, please [click here](/admin/settings/files)."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_social_media",
+      "label": "Show social media",
+      "info": "Make sure to have properly configured your social media in the theme settings.",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background",
+      "default": "#1e2d7d"
+    },
+    {
+      "type": "color",
+      "id": "text",
+      "label": "Text",
+      "default": "#ffffff"
+    }
+  ],
+  "presets": [
+    {
+      "category": "Promotional",
+      "name": "Newsletter",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

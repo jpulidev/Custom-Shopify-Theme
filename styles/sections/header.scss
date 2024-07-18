@@ -1,0 +1,147 @@
+.header {
+  &__inner {
+    position: relative;
+  }
+
+  &__logo {
+    @media screen and (max-width: 640px) {
+      height: 64px;
+      img {
+        left: 50%;
+        position: absolute;
+        transform: translateX(-50%);
+      }
+    }
+  }
+
+  &__search-bar-wrapper {
+    &.is-visible {
+      @media screen and (max-width: 640px) {
+        margin-bottom: 0;
+        order: 10;
+        padding: 0;
+        position: relative;
+        z-index: initial;
+      }
+    }
+  }
+  .search-bar {
+    @media screen and (max-width: 640px) {
+      padding-bottom: 0;
+    }
+    &__top {
+      border-radius: 0.5em;
+      height: 36px;
+    }
+    &__submit {
+      border-radius: 0 0.5em 0.5em 0;
+      width: 60px;
+
+      svg {
+        vertical-align: middle;
+      }
+    }
+  }
+  &--search-expanded {
+    @media screen and (max-width: 640px) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__action-list {
+    align-items: flex-start;
+    @media screen and (max-width: 640px) {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__action-item {
+    line-height: 1;
+    padding: 0 0.25em;
+    &:not(:last-child):after {
+      content: unset;
+    }
+    &-link {
+      display: inline-block;
+    }
+    span {
+      font-family: $font--heading;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+  }
+
+  &__cart {
+    &-summary {
+      margin-right: 1em;
+      @include media-query($medium-down) {
+        display: none;
+      }
+    }
+    &-count {
+      background: none;
+      font-size: 1em;
+      height: initial;
+      min-width: unset;
+      padding: 0;
+      position: initial;
+      transform: none !important;
+    }
+    &-total {
+      &:before {
+        color: $navy;
+        content: " | ";
+        font-size: 1.25em;
+      }
+    }
+    &-icon {
+      margin-right: 0;
+      .icon-state__secondary {
+        color: $navy;
+      }
+    }
+  }
+
+  &__account-icon {
+    span {
+      &:last-child {
+        @media screen and (max-width: 399px) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .icon-state {
+    display: flex;
+    align-items: center;
+
+    &__primary,
+    &__secondary {
+      line-height: 1;
+    }
+
+    @include media-query($mobile) {
+      svg {
+        height: 2.25em;
+        width: 2.25em;
+        &.icon--close {
+          height: 1.75em;
+          width: 1.75em;
+        }
+      }
+
+      span {
+        font-size: 0.75em;
+      }
+
+      &.header__account-icon {
+        span {
+          &:last-child {
+            order: -1;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,241 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "product_meta": {
+          "type": "product_meta",
+          "settings": {
+            "show_vendor": true,
+            "show_sku": true,
+            "show_share_buttons": false,
+            "show_request_quote": true,
+            "request_text": "Request Quote",
+            "request_url": "/pages/contact-us"
+          }
+        },
+        "variant_selector": {
+          "type": "variant_selector",
+          "settings": {
+            "selector_mode": "block",
+            "color_mode": "color",
+            "show_quantity_selector": true,
+            "show_taxes_included": false,
+            "show_inventory_quantity": false,
+            "low_inventory_threshold": 0
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_payment_button": true
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "display_mode": "collapse"
+          }
+        },
+        "5e884145-2406-4520-8346-814232b4ca45": {
+          "type": "content",
+          "disabled": true,
+          "settings": {
+            "title": "Shipping & Returns",
+            "content": "<p>...<\/p>",
+            "page": "",
+            "show_shipping_estimate": false,
+            "display_mode": "collapse"
+          }
+        },
+        "0c31f9b7-2f63-4ca4-a602-e2db2473a06e": {
+          "type": "shopify:\/\/apps\/junip-product-reviews-ugc\/blocks\/junip-product-review\/dc14f5a8-ed15-41b1-ad08-cfba23f9789b",
+          "settings": {
+            "product": "{{product}}"
+          }
+        },
+        "8fa2a648-1434-4e50-b2c9-c9121ec8a178": {
+          "type": "content",
+          "disabled": true,
+          "settings": {
+            "title": "Payment & Security",
+            "content": "<p>...<\/p>",
+            "page": "",
+            "show_shipping_estimate": false,
+            "display_mode": "collapse"
+          }
+        },
+        "7cca95d4-2817-47e0-bb68-040e9dbc25db": {
+          "type": "shipping_estimator",
+          "settings": {
+            "shipping_estimator_default_country": "United States",
+            "show_refunds_policy": true
+          }
+        }
+      },
+      "block_order": [
+        "product_meta",
+        "variant_selector",
+        "buy_buttons",
+        "description",
+        "5e884145-2406-4520-8346-814232b4ca45",
+        "0c31f9b7-2f63-4ca4-a602-e2db2473a06e",
+        "8fa2a648-1434-4e50-b2c9-c9121ec8a178",
+        "7cca95d4-2817-47e0-bb68-040e9dbc25db"
+      ],
+      "settings": {
+        "image_size": "small",
+        "enable_video_looping": false,
+        "enable_image_zoom": true,
+        "zoom_effect": "outside",
+        "carousel_effect": "fade"
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "heading": "You may also like",
+        "background_color": "#f3f4f5",
+        "show_quick_buy": false,
+        "show_shop_all": true,
+        "show_view_all_link": "",
+        "text_view_all": "View All"
+      }
+    },
+    "163492042376eb174c": {
+      "type": "image-with-text-multi",
+      "blocks": {
+        "164001464619b9e106-0": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Hoses_3.png",
+            "image_position": "left",
+            "image_width": 50,
+            "background_color": "#112435",
+            "title": "Boom Systems",
+            "content": "<p>Use this text to share information about your brand with your customers.<\/p>",
+            "color": "#ffffff",
+            "button_text": "Shop Boom Systems",
+            "button_link": "shopify:\/\/collections\/boom-systems",
+            "button_style": "primary"
+          }
+        },
+        "a8ad7096-e6a3-4a52-bcfa-07070c3d1324": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Hero_fa37fa1a-6391-4510-a3d4-6cd17efa9706.png",
+            "image_position": "full",
+            "image_width": 50,
+            "background_color": "#112435",
+            "title": "Carbide Wear Parts",
+            "content": "<p>Looking for something in Carbide? Concrete Pump Supply has the parts you need!<\/p>",
+            "color": "#ffffff",
+            "button_text": "Shop Carbide",
+            "button_link": "shopify:\/\/collections\/all",
+            "button_style": "primary"
+          }
+        },
+        "87f32baf-4354-4098-bb24-8baff9b34f01": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/envirosystems_section.png",
+            "image_position": "left",
+            "image_width": 50,
+            "background_color": "#112435",
+            "title": "Primer & Support Products",
+            "content": "<p>From Primers to Removers, we have your solutions!<br\/>See our selection of products & sizes available!<\/p>",
+            "color": "#ffffff",
+            "button_text": "Shop Primer & Support Products",
+            "button_link": "shopify:\/\/collections\/all",
+            "button_style": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "164001464619b9e106-0",
+        "a8ad7096-e6a3-4a52-bcfa-07070c3d1324",
+        "87f32baf-4354-4098-bb24-8baff9b34f01"
+      ],
+      "settings": {
+        "section_headline": "",
+        "collapse_desktop": true
+      }
+    },
+    "recently-viewed-products": {
+      "type": "recently-viewed-products",
+      "settings": {
+        "title": "Recently viewed",
+        "background_color": "#f3f4f5",
+        "show_quick_buy": false,
+        "show_shop_all": true,
+        "show_view_all_link": "",
+        "text_view_all": "View All"
+      }
+    },
+    "16370049301f2a75d2": {
+      "type": "text-with-icons",
+      "blocks": {
+        "163700493072bdc664-0": {
+          "type": "item",
+          "settings": {
+            "icon": "bi-delivery",
+            "title": "Free delivery for $80+ orders",
+            "content": "<p>We deliver in 48 hours max!<\/p>"
+          }
+        },
+        "163700493072bdc664-1": {
+          "type": "item",
+          "settings": {
+            "icon": "bi-returns",
+            "title": "Satisfied or refunded",
+            "content": "<p>Free returns within 14 days<\/p>"
+          }
+        },
+        "163700493072bdc664-2": {
+          "type": "item",
+          "settings": {
+            "icon": "bi-customer-support",
+            "title": "We are available 24\/7",
+            "content": "<p>Contact us by chat, mail, phone<\/p>"
+          }
+        },
+        "163700493072bdc664-3": {
+          "type": "item",
+          "settings": {
+            "icon": "bi-secure-payment",
+            "title": "100% Secure payments",
+            "content": "<p>Visa, Mastercard, Amex, PayPal<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "163700493072bdc664-0",
+        "163700493072bdc664-1",
+        "163700493072bdc664-2",
+        "163700493072bdc664-3"
+      ],
+      "settings": {
+        "stack_mobile": false,
+        "hide_mobile": true
+      }
+    },
+    "1634919032ab95be08": {
+      "type": "image-with-text-overlay",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/prefooter.png",
+        "title": "Concrete Pump Supply is the One-Stop Shop serving all of North America",
+        "content": "<p>We offer the highest Quality products at affordable pricing<\/p>",
+        "show_image_overlay": false,
+        "color": "#ffffff"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "product-recommendations",
+    "163492042376eb174c",
+    "recently-viewed-products",
+    "16370049301f2a75d2",
+    "1634919032ab95be08"
+  ]
+}

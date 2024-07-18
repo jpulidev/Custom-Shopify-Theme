@@ -1,0 +1,223 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "product_meta": {
+          "type": "product_meta",
+          "settings": {
+            "show_vendor": true,
+            "show_sku": true,
+            "show_share_buttons": false,
+            "show_request_quote": true,
+            "request_text": "Request Quote",
+            "request_url": "/pages/contact-us"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_payment_button": true
+          }
+        },
+        "c70851cb-ddc1-4ced-9630-d774753fbb75": {
+          "type": "content",
+          "settings": {
+            "title": "Specifications",
+            "content": "<p>{{ product.metafields.equipment.specifications | metafield_tag }}<\/p>",
+            "page": "",
+            "show_shipping_estimate": false,
+            "display_mode": "collapse"
+          }
+        },
+        "c66bcc82-ce6b-4c39-b5f8-ab31aa064a5b": {
+          "type": "content",
+          "settings": {
+            "title": "Features",
+            "content": "<p>{{ product.metafields.equipment.features | metafield_tag }}<\/p>",
+            "page": "",
+            "show_shipping_estimate": false,
+            "display_mode": "collapse"
+          }
+        },
+        "e6c7fe34-2faf-415e-b2a4-dcd460fb5ddd": {
+          "type": "content-icons",
+          "settings": {
+            "radio_text": "Radio Control",
+            "radius_text": "360° Radius"
+          }
+        }
+      },
+      "block_order": [
+        "product_meta",
+        "buy_buttons",
+        "c70851cb-ddc1-4ced-9630-d774753fbb75",
+        "c66bcc82-ce6b-4c39-b5f8-ab31aa064a5b",
+        "e6c7fe34-2faf-415e-b2a4-dcd460fb5ddd"
+      ],
+      "settings": {
+        "image_size": "small",
+        "enable_video_looping": false,
+        "enable_image_zoom": true,
+        "zoom_effect": "outside",
+        "carousel_effect": "fade"
+      }
+    },
+    "1642203508f45016e7": {
+      "type": "collection-tile-links",
+      "blocks": {
+        "16422035080ddf1d26-0": {
+          "type": "collection_tile",
+          "settings": {
+            "collection": "used-equipment",
+            "title": "",
+            "image": "shopify:\/\/shop_images\/Hero_49df131a-5039-4c4b-b322-acee558f9939.png",
+            "background_color": "#112435",
+            "color": "#ffffff"
+          }
+        },
+        "2b7cba94-81e5-4b30-899f-c3a2dc11c07a": {
+          "type": "collection_tile",
+          "settings": {
+            "collection": "high-rise-equipment",
+            "title": "",
+            "image": "shopify:\/\/shop_images\/Hero_49df131a-5039-4c4b-b322-acee558f9939.png",
+            "background_color": "#112435",
+            "color": "#ffffff"
+          }
+        },
+        "977c6820-52e4-4202-9d6c-4bfc39969a24": {
+          "type": "collection_tile",
+          "settings": {
+            "collection": "placing-equipment",
+            "title": "",
+            "image": "shopify:\/\/shop_images\/Hero_49df131a-5039-4c4b-b322-acee558f9939.png",
+            "background_color": "#112435",
+            "color": "#ffffff"
+          }
+        },
+        "6a95b0a6-49f9-496e-b48e-9e8a572bf3af": {
+          "type": "collection_tile",
+          "settings": {
+            "collection": "rental-equipment",
+            "title": "",
+            "image": "shopify:\/\/shop_images\/Hero_49df131a-5039-4c4b-b322-acee558f9939.png",
+            "background_color": "#112435",
+            "color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "16422035080ddf1d26-0",
+        "2b7cba94-81e5-4b30-899f-c3a2dc11c07a",
+        "977c6820-52e4-4202-9d6c-4bfc39969a24",
+        "6a95b0a6-49f9-496e-b48e-9e8a572bf3af"
+      ],
+      "settings": {
+        "section_headline": "",
+        "background_image": "shopify:\/\/shop_images\/Rectangle_85.png",
+        "collapse_desktop": true
+      }
+    },
+    "16370049301f2a75d2": {
+      "type": "text-with-icons",
+      "blocks": {
+        "163700493072bdc664-0": {
+          "type": "item",
+          "settings": {
+            "icon": "bi-delivery",
+            "title": "Free delivery worldwide",
+            "content": "<p>Short content about your store<\/p>"
+          }
+        },
+        "163700493072bdc664-1": {
+          "type": "item",
+          "settings": {
+            "icon": "bi-returns",
+            "title": "Satisfied or refunded",
+            "content": "<p>Short content about your store<\/p>"
+          }
+        },
+        "163700493072bdc664-2": {
+          "type": "item",
+          "settings": {
+            "icon": "bi-customer-support",
+            "title": "Top-notch support",
+            "content": "<p>Short content about your store<\/p>"
+          }
+        },
+        "163700493072bdc664-3": {
+          "type": "item",
+          "settings": {
+            "icon": "bi-secure-payment",
+            "title": "Secure payments",
+            "content": "<p>Short content about your store<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "163700493072bdc664-0",
+        "163700493072bdc664-1",
+        "163700493072bdc664-2",
+        "163700493072bdc664-3"
+      ],
+      "settings": {
+        "stack_mobile": false,
+        "hide_mobile": true
+      }
+    },
+    "164191979758948857": {
+      "type": "reviews",
+      "blocks": {
+        "164191979713a045af-0": {
+          "type": "review",
+          "settings": {
+            "title": "New Review [NEEDS CONTENT]",
+            "rating": 5,
+            "name": "Ted Lasso",
+            "reviewer_title": "Football Coach",
+            "reviewer_image": "shopify:\/\/shop_images\/RLVAC6RWJVDVXEH4MVGUKKOSUQ.jpg",
+            "content": "<p>Here is where your review text will go. Please copy and paste from the appropriate source and fix any formatting issues within the rich text editor.<\/p>"
+          }
+        },
+        "164191979713a045af-1": {
+          "type": "review",
+          "settings": {
+            "title": "New Review [NEEDS CONTENT]",
+            "rating": 5,
+            "name": "Ted Lasso",
+            "reviewer_title": "Football Coach",
+            "reviewer_image": "shopify:\/\/shop_images\/RLVAC6RWJVDVXEH4MVGUKKOSUQ.jpg",
+            "content": "<p>Here is where your review text will go. Please copy and paste from the appropriate source and fix any formatting issues within the rich text editor.<\/p>"
+          }
+        },
+        "164191979713a045af-2": {
+          "type": "review",
+          "settings": {
+            "title": "New Review [NEEDS CONTENT]",
+            "rating": 5,
+            "name": "Ted Lasso",
+            "reviewer_title": "Football Coach",
+            "reviewer_image": "shopify:\/\/shop_images\/RLVAC6RWJVDVXEH4MVGUKKOSUQ.jpg",
+            "content": "<p>Here is where your review text will go. Please copy and paste from the appropriate source and fix any formatting issues within the rich text editor.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "164191979713a045af-0",
+        "164191979713a045af-1",
+        "164191979713a045af-2"
+      ],
+      "settings": {
+        "background": "#f26531",
+        "title": "Reviews"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1642203508f45016e7",
+    "16370049301f2a75d2",
+    "164191979758948857"
+  ]
+}

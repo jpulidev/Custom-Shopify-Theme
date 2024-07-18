@@ -1,0 +1,101 @@
+{
+  "sections": {
+    "163950000440a69b03": {
+      "type": "hero-collection",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Hero_23d8ec06-f157-49bc-a490-35a45dda2890.png",
+        "show_image_overlay": false,
+        "image_height": 345,
+        "use_custom_title": false,
+        "custom_title": "",
+        "color": "#ffffff"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "16401939470107d0b6": {
+      "type": "video",
+      "settings": {
+        "title": "",
+        "internal_video": "https:\/\/cdn.shopify.com\/s\/files\/1\/0589\/8636\/5100\/files\/Boom-system-Vid.mp4?v=1637099750",
+        "external_video": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "image": "shopify:\/\/shop_images\/Boom-System-Pic_landing-page.jpg"
+      }
+    },
+    "164018262350f05f79": {
+      "type": "apps",
+      "blocks": {
+        "1e8d649a-1146-469f-8e42-4c9f346deea6": {
+          "type": "shopify:\/\/apps\/form-builder-with-file-upload\/blocks\/form-block\/b6b8dd14-356b-4725-a4ed-77232212b3c3",
+          "settings": {
+            "form_uuid": "Jy7khMcSdKU41y-v7GpZTw"
+          }
+        }
+      },
+      "block_order": [
+        "1e8d649a-1146-469f-8e42-4c9f346deea6"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "16419161934cdf0980": {
+      "type": "reviews",
+      "blocks": {
+        "16419161937f4a61e1-0": {
+          "type": "review",
+          "settings": {
+            "title": "New Review [NEEDS CONTENT]",
+            "rating": 5,
+            "name": "Ted Lasso",
+            "reviewer_title": "Football Coach",
+            "reviewer_image": "shopify:\/\/shop_images\/RLVAC6RWJVDVXEH4MVGUKKOSUQ.jpg",
+            "content": "<p>Here is where your review text will go. Please copy and paste from the appropriate source and fix any formatting issues within the rich text editor.<\/p>"
+          }
+        },
+        "16419161937f4a61e1-1": {
+          "type": "review",
+          "settings": {
+            "title": "New Review [NEEDS CONTENT]",
+            "rating": 5,
+            "name": "Ted Lasso",
+            "reviewer_title": "Football Coach",
+            "reviewer_image": "shopify:\/\/shop_images\/RLVAC6RWJVDVXEH4MVGUKKOSUQ.jpg",
+            "content": "<p>Here is where your review text will go. Please copy and paste from the appropriate source and fix any formatting issues within the rich text editor.<\/p>"
+          }
+        },
+        "16419161937f4a61e1-2": {
+          "type": "review",
+          "settings": {
+            "title": "New Review [NEEDS CONTENT]",
+            "rating": 5,
+            "name": "Ted Lasso",
+            "reviewer_title": "Football Coach",
+            "reviewer_image": "shopify:\/\/shop_images\/RLVAC6RWJVDVXEH4MVGUKKOSUQ.jpg",
+            "content": "<p>Here is where your review text will go. Please copy and paste from the appropriate source and fix any formatting issues within the rich text editor.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "16419161937f4a61e1-0",
+        "16419161937f4a61e1-1",
+        "16419161937f4a61e1-2"
+      ],
+      "settings": {
+        "background": "#f26531",
+        "title": "Reviews"
+      }
+    }
+  },
+  "order": [
+    "163950000440a69b03",
+    "main",
+    "16401939470107d0b6",
+    "164018262350f05f79",
+    "16419161934cdf0980"
+  ]
+}

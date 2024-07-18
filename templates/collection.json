@@ -1,0 +1,57 @@
+{
+  "sections": {
+    "1642614657bf9464d1": {
+      "type": "hero-collection",
+      "settings": {
+        "show_image_overlay": false,
+        "image_height": 250,
+        "use_custom_title": false,
+        "custom_title": "",
+        "color": "#ffffff"
+      }
+    },
+    "1642614412e2c32fb2": {
+      "type": "collection-list-subcategory",
+      "settings": {
+        "title": "",
+        "round_images": true,
+        "show_collection_title": true,
+        "image": "shopify:\/\/shop_images\/Rectangle_33_f7f67d46-6ce9-4c45-b029-fbe707314392.png"
+      }
+    },
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "show_collection_image": false,
+        "collapse_collection_description": false,
+        "collection_image_size": "small",
+        "products_per_row": "4",
+        "default_products_per_page": 24,
+        "default_view_layout": "grid",
+        "show_quick_buy": "list",
+        "show_quick_view": "list",
+        "quick_links": "",
+        "quick_links_show_products_count": true,
+        "show_filters": true,
+        "show_filter_color_swatch": true,
+        "open_group_filters_mode": "first_open"
+      }
+    },
+    "1637005317cda4d3ea": {
+      "type": "image-with-text-overlay",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/prefooter.png",
+        "title": "Concrete Pump Supply is the One-Stop Shop  serving all of North America",
+        "content": "<p>We offer the highest Quality products at affordable pricing<\/p>",
+        "show_image_overlay": false,
+        "color": "#ffffff"
+      }
+    }
+  },
+  "order": [
+    "1642614657bf9464d1",
+    "1642614412e2c32fb2",
+    "main",
+    "1637005317cda4d3ea"
+  ]
+}

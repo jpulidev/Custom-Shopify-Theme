@@ -1,0 +1,22 @@
+.page-boom-system-quote-request {
+  [data-section-type='video'] {
+    background-color: $light-gray;
+  }
+}
+
+.video-item {
+  max-width: unset;
+  &.is-playing {
+    video {
+      visibility: visible;
+    }
+  }
+
+  video {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    visibility: hidden;
+    width: 100%;
+  }
+}

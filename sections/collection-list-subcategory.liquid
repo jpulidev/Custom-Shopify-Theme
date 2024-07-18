@@ -1,0 +1,80 @@
+<section class="section subcategory" data-section-id="{{ section.id }}" data-section-type="collection-list" style="background-image: url({{ section.settings.image | img_url: '1200x' }});">
+     
+<div class="container">
+    <div class="scroller">
+        <div class="scroller__inner">
+          <div class="collection-list subcategory-section">
+   {% for link in linklists.main-menu.links %}   
+            {% if link.url == collection.url %}      
+                    {% for sub_link in link.links %}          
+                       {% for collection in collections %}
+                             {% if sub_link.url == collection.url %}
+                             <a href="{{ collection.url }}" class="collection-item" data-collection-index="{{ forloop.index0 }}" {{ block.shopify_attributes }}>                                 
+                                  <div class="collection-item__image-wrapper {% if section.settings.round_images %}collection-item__image-wrapper--rounded{% endif %}">
+                                    {%- capture supported_sizes -%}{%- render 'image-size', sizes: '300,400,500,600,700,800', image: collection.products.first.featured_image -%}{%- endcapture -%}
+                                    {%- assign image_url = collection_image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+                  
+                                    <div class="aspect-ratio" style="padding-bottom: 100%">
+                                      <img class="lazyload image--fade-in" data-src="{{ collection.products.first.featured_image  | img_url: '450x' }}" data-widths="[{{ supported_sizes }}]" data-sizes="auto" alt="{{ collection.products.first.featured_image.alt | escape }}">                  
+                                      <noscript>
+                                        <img src="{{ collection.products.first.featured_image | img_url: '450x' }}" alt="{{ collection.products.first.featured_image.alt | escape }}">
+                                      </noscript>
+                                    </div>
+                                  </div>
+                  
+                                  {%- if section.settings.show_collection_title -%}
+                                    <span class="collection-item__title text--strong">{{ sub_link.title }} {% render 'icon', icon: 'tail-right' %}</span>
+                                  {%- endif -%}
+                                {%- else -%} 
+                              </a>
+                             {%endif%}
+                        {% endfor %}
+                    {% endfor %}   
+                {%endif%} 
+    {% endfor %} 
+               </div>
+            </div>
+          </div>
+</div>
+
+
+  </section>
+  
+  {% schema %}
+  {
+    "name": "Collection SubCategory",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Our collections"
+      },
+      {
+        "type": "checkbox",
+        "id": "round_images",
+        "label": "Round images",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_collection_title",
+        "label": "Show collection title",
+        "default": true
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image",
+        "info": "600 x 600px .jpg recommended"
+      }
+    ],
+
+    "presets": [
+      {
+        "category": "Collection",
+        "name": "Collection subCatagory"
+      }
+    ]
+  }
+  {% endschema %}

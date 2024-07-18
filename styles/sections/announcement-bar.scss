@@ -1,0 +1,42 @@
+.announcement-bar {
+  border-color: $black;
+  .container {
+    @include media-query($mobile) {
+      padding: 1em 2em;
+    }
+  }
+  &__content {
+    p {
+      font-weight: 700;
+      line-height: 1.25;
+    }
+    em {
+      font-style: normal;
+      @include media-query($mobile) {
+        display: none;
+      }
+    }
+  }
+  &__phone {
+    @include media-query($small-up) {
+      flex-basis: 25%;
+      text-align: right;
+    }
+    svg {
+      margin-right: .5em;
+      vertical-align: text-bottom;
+      @include media-query($mobile) {
+        height: 1.5em;
+        width: 1.5em;
+      }
+    }
+    span {
+      font-family: $font--heading;
+      font-size: 1.25em;
+      font-weight: 700;
+      @include media-query($large-up) {
+        font-size: 1.5em;
+      }
+    }
+  }
+}

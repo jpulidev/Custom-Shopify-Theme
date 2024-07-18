@@ -1,0 +1,52 @@
+.cart-wrapper {
+  .card {
+    background-color: white;
+    .line-item {
+      &__quantity {
+        .quantity-selector {
+          background: rgba(196, 196, 196, 0.19);
+          border: 1px solid rgba(17, 36, 53, 0.29);
+          border-radius: 0;
+          &__value {
+            box-shadow: none;
+            border-left: 1px solid rgba(17, 36, 53, 0.29);
+            border-right: 1px solid rgba(17, 36, 53, 0.29);
+          }
+        }
+      }
+    }
+    .estimate-shipping {
+      &__toggle {
+        background-color: var(--secondary-background);
+      }
+      &__collapsible {
+        .form__field {
+          box-shadow: 0 -1px rgba(var(--border-color-rgb), 0.25) inset;
+        }
+      }
+    }
+    &__section {
+      .cart-recap__note {
+        &-button {
+          background-color: var(--secondary-background);
+          padding: 10px;
+        }
+      }
+    }
+  }
+}
+
+.mini-cart {
+  &__quantity {
+    .quantity-selector {
+      background: rgba(196, 196, 196, 0.19);
+      border: 1px solid rgba(17, 36, 53, 0.29);
+      border-radius: 0;
+      &__value {
+        box-shadow: none;
+        border-left: 1px solid rgba(17, 36, 53, 0.29);
+        border-right: 1px solid rgba(17, 36, 53, 0.29);
+      }
+    }
+  }
+}

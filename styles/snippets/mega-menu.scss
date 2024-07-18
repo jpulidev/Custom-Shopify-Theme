@@ -1,0 +1,138 @@
+body.no-mobile-scroll {
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+.nav-bar {
+  background: $light-blue;
+  box-shadow: 0 0 1em  rgba(0, 0, 0, 0.5);
+  &:after { display: none; }
+
+  &__linklist {
+    @include media-query($medium-up) {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__image {
+    align-self: center;
+    @include media-query($large-down) {
+      display: none;
+    }
+    @include media-query($xl) {
+      flex-basis: 10%;
+    }
+    img { vertical-align: middle; }
+  }
+
+  &__item {
+    @include media-query($medium-up) {
+      margin-right: 0;
+    }
+    .mega-menu {
+      background: $white;
+      border: 0;
+      .container { background: rgba(0, 150, 214, 0.8); }
+    }
+  }
+
+  &__link {
+    color: $white;
+    font-family: $font--heading;
+    font-weight: 700;
+    &:hover,
+    &[aria-expanded='true'] { color: $white; }
+    @include media-query($medium-up) {
+      font-size: 1.25em;
+    }
+    .icon--arrow-bottom { margin-left: .25em; }
+  }
+}
+
+.mega-menu {
+  .container { max-width: unset; }
+
+  &__inner {
+    padding: 2em 0 2.5em;
+  }
+
+  &__stacked {
+    flex-flow: column wrap;
+    height: 16em;
+    padding: .75em 0;
+    @include media-query($large-up) {
+      padding: 1.5em 10em;
+    }
+    .mega-menu__column {
+      flex: 1 1 25%;
+      margin: 0;
+      max-width: 25%;
+      min-width: 25%;
+      padding: .25em 1em;
+    }
+  }
+
+  &__inner--large {
+    .mega-menu__column {
+      flex: 0 1 auto;
+      margin: 0 1em;
+      @include media-query($large-up) {
+        margin: 0 2em;
+      }
+    }
+  }
+
+  &__title {
+    color: $white;
+    line-height: 1.25;
+    margin: 0;
+  }
+}
+
+.mobile-menu {
+  box-shadow: 0 1em 1em 1em rgba(0, 0, 0, 0.6);
+  left: -1em;
+  top: calc(100% + .75em);
+
+  &__panel {
+    color: $white;
+    &:not(.is-nested) { background: $light-blue; }
+    &.is-nested {
+      background: $white;
+      .mobile-menu__panel-inner {
+        background: rgba(0, 150, 214, 0.8);
+        min-height: 100%;
+      }
+      .mobile-menu__section {
+        &.is-sticky {
+          background: $light-blue;
+        }
+      }
+    }
+  }
+
+  &__nav-link,
+  &__back-button,
+  &__nav-list-item {
+    font-family: $font--heading;
+    font-weight: 700;
+    line-height: 1.5;
+  }
+
+  &__nav-link {
+    font-size: 1.25em;
+    &.text--strong {
+      border-bottom: 2px solid $white;
+      color: $white;
+      font-size: 1.5em;
+      padding-bottom: 0;
+      text-transform: uppercase;
+    }
+  }
+  
+  &__nav-list-item {
+    margin: 0;
+    padding: .5em 0;
+  }
+}

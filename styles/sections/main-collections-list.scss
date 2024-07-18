@@ -1,0 +1,29 @@
+[data-section-type='list-collections'] {
+  .page__header {
+    @media screen and (max-width: 640px) {
+      margin: 2em 0;
+    }
+  }
+
+  .grid__cell {
+    margin-bottom: 4em;
+  }
+
+  .collection-block-item {
+    overflow: visible;
+
+    &__title {
+      color: $text-gray;
+      font-size: 1.5em;
+      left: unset;
+      line-height: 1.2;
+      padding: 0;
+      top: calc(100% + .5em);
+      transform: unset;
+    }
+
+    &__image {
+      border-radius: .5em;
+    }
+  }
+}
